@@ -39,15 +39,33 @@ body
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2), 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
     z-index: 100;
     background: rgba(0, 0, 0, 0.26);
-    
+
     ul
       display: flex
       flex-direction: column
       justify-content: center
       height: 100%
       li
-        display: block
+        display: flex
+        align-items: center
+        justify-content: center
         text-align: center
+
+        color: #222;
+        font-weight: normal;
+        font-style: normal;
+        cursor: auto;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        font-size: 1rem;
+        line-height: 1.6;
+        font-family: inherit;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-position: outside;
+        height: 48px;
+        width: 56px;
         &:hover
           background-color: #000000
         i

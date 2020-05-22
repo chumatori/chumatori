@@ -11,6 +11,7 @@ body
   width: 100%
   height: 100%
   position: relative
+  overflow: hidden
   .page_cover
     position: absolute
     top: 0
@@ -67,11 +68,10 @@ body
         align-items: center
         justify-content: center
         text-align: center
-
+        cursor: pointer
         color: #222
         font-weight: normal
         font-style: normal
-        cursor: auto
         -webkit-tap-highlight-color: rgba(0,0,0,0)
         font-size: 1rem
         line-height: 1.6
@@ -83,8 +83,11 @@ body
         list-style-position: outside
         height: 48px
         width: 56px
+        .title
+          display: none
         &:hover
           background-color: #000000
+          
         i
           font-size: 22px
           color: #ffffff
@@ -124,6 +127,22 @@ body
     height: 56px
     background: transparent
     color: #ffffff
+    .container
+      display: flex
+      flex-direction: row
+      .social_icon_holder
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 32px
+        height: 32px
+        background-color: #ffffff
+        margin-left: 8px
+        padding: 4px
+        i
+          font-size: 22px
+          color: #000000
+
   header
     background: transparent
     color: #ffffff
@@ -132,15 +151,22 @@ body
     .container
       display: flex
       flex-direction: row
-      .header_contact:after
-        content: ""
-        width: 1px
-        height: 16px
-        background-color: #fff
+      .header_contact
+        position: relative
+        span:after
+          content: ""
+          position: absolute
+          left: 0
+          width: 1px
+          height: 40%
+          background-color: #fff
 
-      &>div
+      &>a
         padding: 16px
         font-size: 18px;
+        text-decoration: none
+        color: #fff  
+        
         &:hover
           background: rgba(0, 0, 0, 0.5)
 @media screen and ( max-width: 700px )
@@ -150,3 +176,4 @@ body
         flex-direction: column
         .left_block
           border: none
+          margin-left: 0

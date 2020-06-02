@@ -5,9 +5,10 @@
 
 html
   height: 100%
-  overflow: auto
+  width: 100%
+  overflow: hidden
 body
-  display: table
+  display: block
   width: 100%
   height: 100%
   position: relative
@@ -93,21 +94,24 @@ body
           color: #ffffff
 
   header, main, footer
-    display: table-row
-    position: relative
+    display: block
+    position: absolute
     z-index: 3
     .container
       position: relative
-      left: 56px
-
-
   main
-    height: 100%
+    /** height: 100% **/
+    /** width: 100% **/
+    top: 56px
+    left: 56px
+    bottom: 56px
+    right: 0
     .container
       height: 100%
       display: flex
       align-items: center
       justify-content: center
+      width: 100%
       .left_block
          text-align: center
          border-right: 1px solid white
@@ -127,6 +131,9 @@ body
     height: 56px
     background: transparent
     color: #ffffff
+    position: absolute
+    bottom: 0
+    left: 56px
     .container
       display: flex
       flex-direction: row
@@ -148,6 +155,9 @@ body
     color: #ffffff
     height: 56px
     text-align: left
+    position: absolute
+    top: 0
+    left: 56px
     .container
       display: flex
       flex-direction: row

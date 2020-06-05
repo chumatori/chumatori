@@ -73,17 +73,18 @@ var start, end;
 function deltaYStart (ev) { 
   start = ev.touches[0].screenY; return start; 
 }
-function deltaYMove(ev) { 
-  end = ev.touches[0].screenY;
-  if ((start - end)<0){
+function DeltaYEnd(ev) { 
+  end = ev.changedTouches[0].screenY;
+  if (((start - end) < -70) & (currentVisibleBlock < 3)){
     hideAll(); pageContent[(++currentVisibleBlock)].style.display = 'block';
   }
-  else {
+  if (((start - end) > 70) & (currentVisibleBlock > 0)) {
     hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
   }
+  selectedNavMenuElement();
   return false;
 }
 touchArea.addEventListener('touchstart', deltaYStart, false);
-touchArea.addEventListener('touchmove', deltaYMove, false);
+touchArea.addEventListener('touchend', DeltaYEnd, false);
 
 

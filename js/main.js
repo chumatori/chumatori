@@ -8,6 +8,7 @@ function hideAll() {
 
   }
 }
+
 function selectedNavMenuElement() {
   for (let i = 0; i < navMenuElement.length; i++) {
     navMenuElement[i].classList.remove('nav_selected');
@@ -65,4 +66,24 @@ function clickNavMenuElement() {
   }
 }  
 clickNavMenuElement();
+
+
+var touchArea = document.getElementsByTagName('body')[0];
+var start, end;
+function deltaYStart (ev) { 
+  start = ev.touches[0].screenY; return start; 
+}
+function deltaYMove(ev) { 
+  end = ev.touches[0].screenY;
+  if ((start - end)<0){
+    hideAll(); pageContent[(++currentVisibleBlock)].style.display = 'block';
+  }
+  else {
+    hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
+  }
+  return false;
+}
+touchArea.addEventListener('touchstart', deltaYStart, false);
+touchArea.addEventListener('touchmove', deltaYMove, false);
+
 

@@ -1,15 +1,16 @@
 var currentVisibleBlock = 0;
 const pageContent = document.querySelectorAll('section');
+const navMenuElement = document.querySelectorAll('nav > ul > li');
 
 function hideAll() {
-  for (i = 0; i < pageContent.length; i++) {
+  for ( let i = 0; i < pageContent.length; i++) {
     pageContent[i].style.display = 'none';
 
   }
 }
 //scroll
 
-function trackWhee(elem, callback) {
+function scrollPageContent(elem, callback) {
   if (elem.addEventListener) {
     if ('onwheel' in document) { // IE9+, FF17+, Ch31+
       elem.addEventListener("wheel", callback);
@@ -22,8 +23,9 @@ function trackWhee(elem, callback) {
     elem.attachEvent("onmousewheel", callback);
   }
 }
+
 var scrollTimeout = 0;
-trackWhee(window, function () {
+scrollPageContent(window, function () {
 
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
@@ -41,3 +43,16 @@ trackWhee(window, function () {
   }
   return false;
 })
+
+
+function clickNavMenuElement() {  
+  for (let i=0; i < navMenuElement.length; i++){
+    navMenuElement[i].addEventListener('click', function () {
+          hideAll(); 
+      pageContent[i].style.display = 'block';
+      currentVisibleBlock = i;  
+    })
+
+  }
+}  
+clickNavMenuElement();

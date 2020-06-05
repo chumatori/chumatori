@@ -26,8 +26,21 @@
   </header>
   <main id="hxv">
     <div class="container">
-      <div class="left_block holder"><span style="font-size: 150px; color: white; margin-left: 56px;">81</span></div>
-      <div class="right_block holder">
+      <div class="left_block holder">
+        <div style="font-size: 8rem; color: white; text-align: center;">81</div>
+        <div id="clock" style="text-align: center; font-size: 4rem;"></div>
+        <script>
+          function clock() {
+            var date = new Date(),
+              hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
+              minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
+              seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+            document.getElementById('clock').innerHTML = hours + ':' + minutes + ':' + seconds;
+          }
+          setInterval(clock, 1000);
+          clock();</script>
+      </div>
+      <div class="right_block holder" style="text-align: center;">
         <section class="content_main">
           <h1>NEW COMPANY</h1>
           <h2>LOREM PRODUCT</h2>

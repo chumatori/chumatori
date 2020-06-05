@@ -115,20 +115,15 @@ body
       align-items: center
       justify-content: center
       width: 100%
-      .left_block
-        text-align: center
-        border-right: 1px solid white
-        margin-left: -56px
       .holder
         flex: 1 1
         overflow: hidden
         color: white
-        img
-          width: 100%
         section
           display: none
         .content_main
           display: block
+      
 
   footer
     height: 56px
@@ -182,6 +177,8 @@ body
 
         &:hover
           background: rgba(0, 0, 0, 0.5)
+.left_block
+  border-right: 1px solid white
 @media screen and ( max-width: 700px )
   body
     main
@@ -189,4 +186,3 @@ body
         flex-direction: column
         .left_block
           border: none
-          margin-left: 0

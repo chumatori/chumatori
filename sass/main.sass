@@ -70,11 +70,11 @@ body
         justify-content: center
         text-align: center
         cursor: pointer
-        color: #222
+        color: #ffffff
         font-weight: normal
         font-style: normal
         -webkit-tap-highlight-color: rgba(0,0,0,0)
-        font-size: 1rem
+        font-size: 1.5rem
         line-height: 1.6
         font-family: inherit
         box-sizing: border-box
@@ -86,13 +86,18 @@ body
         width: 56px
         .title
           display: none
+
         &:hover
           background-color: #000000
-          
-        i
-          font-size: 22px
+          font-size: 1.2rem
           color: #ffffff
-
+      .nav_selected
+        background-color: #ffffff
+        color: #000000
+        &:hover
+          background-color: #000000
+          font-size: 1.2rem
+          color: #ffffff
   header, main, footer
     display: block
     position: absolute
@@ -100,8 +105,6 @@ body
     .container
       position: relative
   main
-    /** height: 100% **/
-    /** width: 100% **/
     top: 56px
     left: 56px
     bottom: 56px
@@ -113,9 +116,9 @@ body
       justify-content: center
       width: 100%
       .left_block
-         text-align: center
-         border-right: 1px solid white
-         margin-left: -56px
+        text-align: center
+        border-right: 1px solid white
+        margin-left: -56px
       .holder
         flex: 1 1
         overflow: hidden
@@ -173,10 +176,10 @@ body
 
       &>a
         padding: 16px
-        font-size: 18px;
+        font-size: 18px
         text-decoration: none
-        color: #fff  
-        
+        color: #fff
+
         &:hover
           background: rgba(0, 0, 0, 0.5)
 @media screen and ( max-width: 700px )

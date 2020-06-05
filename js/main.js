@@ -8,6 +8,13 @@ function hideAll() {
 
   }
 }
+function selectedNavMenuElement() {
+  for (let i = 0; i < navMenuElement.length; i++) {
+    navMenuElement[i].classList.remove('nav_selected');
+  }
+  navMenuElement[currentVisibleBlock].classList.add('nav_selected')  
+}
+selectedNavMenuElement();
 //scroll
 
 function scrollPageContent(elem, callback) {
@@ -24,7 +31,7 @@ function scrollPageContent(elem, callback) {
   }
 }
 
-var scrollTimeout = 0;
+var scrollTimeout = 0; 
 scrollPageContent(window, function () {
 
   var e = window.event;
@@ -40,6 +47,7 @@ scrollPageContent(window, function () {
       hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
       scrollTimeout = Number(new Date);
     }
+    selectedNavMenuElement();
   }
   return false;
 })
@@ -50,9 +58,11 @@ function clickNavMenuElement() {
     navMenuElement[i].addEventListener('click', function () {
           hideAll(); 
       pageContent[i].style.display = 'block';
-      currentVisibleBlock = i;  
+      currentVisibleBlock = i;
+      selectedNavMenuElement(); 
     })
 
   }
 }  
 clickNavMenuElement();
+

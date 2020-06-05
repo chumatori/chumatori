@@ -75,10 +75,10 @@ function deltaYStart (ev) {
 }
 function DeltaYEnd(ev) { 
   end = ev.changedTouches[0].screenY;
-  if (((start - end) < -70) & (currentVisibleBlock < 3)){
+  if (((start - end) > 50) & (currentVisibleBlock > 0)){
     hideAll(); pageContent[(++currentVisibleBlock)].style.display = 'block';
   }
-  if (((start - end) > 70) & (currentVisibleBlock > 0)) {
+  if (((start - end) < -50) & (currentVisibleBlock < 3)) {
     hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
   }
   selectedNavMenuElement();

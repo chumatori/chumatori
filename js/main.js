@@ -26,20 +26,30 @@ function scrollPageContent(elem, callback) {
   }
 }
 
-var lockUntil = 0; 
-var test = null;
+var lock = false;
+
 scrollPageContent(window, function () {
-  if (Number(new Date) < lockUntil) { return false }
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  if (delta > 0 & currentVisibleBlock < 3 & delta != test ) { slideUp(); test = delta }
-  if (delta < 0 & currentVisibleBlock > 0 & delta != test) { slideDown(); test = delta }
+  if (delta < 80 && delta > -80) { return false }
+
+  if (lock) return false;
+  lock = true;
+  setTimeout(function () { lock = false }, 700);
+
+  var e = window.event;
+  var delta = e.deltaY || e.detail || e.wheelDelta;
+
+  e.preventDefault();
+  if (delta > 0 & currentVisibleBlock < 3) { slideUp() }
+  if (delta < 0 & currentVisibleBlock > 0) { slideDown() }
   selectedNavMenuElement();
 
-  lockUntil = Number(new Date) + 700;
+
   return false;
 })
+
 
 
 function clickNavMenuElement() {  

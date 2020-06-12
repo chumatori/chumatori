@@ -27,14 +27,14 @@ function scrollPageContent(elem, callback) {
 }
 
 var lockUntil = 0; 
-var test = {clientY:0};
+var test = {deltaY:0};
 scrollPageContent(window, function () {
   if (Number(new Date) < lockUntil) { return false }
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  if (delta > 0 & currentVisibleBlock < 3 & e.screenY != test.clientY) { slideUp(); test = e }
-  if (delta < 0 & currentVisibleBlock > 0 & e.screenY != test.clientY) { slideDown(); test = e }
+  if (delta > 0 & currentVisibleBlock < 3 & e.deltaY != test.deltaY) { slideUp(); test = e }
+  if (delta < 0 & currentVisibleBlock > 0 & e.deltaY != test.deltaY) { slideDown(); test = e }
   selectedNavMenuElement();
 
   lockUntil = Number(new Date) + 700;

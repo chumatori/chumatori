@@ -33,8 +33,8 @@ scrollPageContent(window, function () {
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  if (delta > 0 & currentVisibleBlock < 3 & e.deltaY != test.deltaY) { slideUp(); test = e }
-  if (delta < 0 & currentVisibleBlock > 0 & e.deltaY != test.deltaY) { slideDown(); test = e }
+  if (delta > 0 & currentVisibleBlock < 3 ) { slideUp(); window.event = null }
+  if (delta < 0 & currentVisibleBlock > 0 ) { slideDown(); window.event = null }
   selectedNavMenuElement();
 
   lockUntil = Number(new Date) + 700;

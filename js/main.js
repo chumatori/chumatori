@@ -26,26 +26,17 @@ function scrollPageContent(elem, callback) {
   }
 }
 
-var scrollTimeout = 0; 
+var lockUntil = 0; 
 scrollPageContent(window, function () {
-
+  if (Number(new Date) < lockUntil) { return false }
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
-  var eventTime = Number(new Date);
 
-  if (scrollTimeout === 0 || (scrollTimeout + 700) <= eventTime) {
-    if (delta > 0 & currentVisibleBlock < 3) {
-      slideUp();
+  if (delta > 0 & currentVisibleBlock < 3) { slideUp() }
+  if (delta < 0 & currentVisibleBlock > 0) { slideDown() }
+  selectedNavMenuElement();
 
-      scrollTimeout = Number(new Date);
-    }
-    if (delta < 0 & currentVisibleBlock > 0) {
-      slideDown();
-      
-      scrollTimeout = Number(new Date);
-    }
-    selectedNavMenuElement();
-  }
+  lockUntil = Number(new Date) + 700;
   return false;
 })
 

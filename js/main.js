@@ -33,7 +33,7 @@ scrollPageContent(window, function () {
   var delta = e.deltaY || e.detail || e.wheelDelta;
   var eventTime = Number(new Date);
 
-  if (scrollTimeout === 0 || (scrollTimeout + 300) <= eventTime) {
+  if (scrollTimeout === 0 || (scrollTimeout + 700) <= eventTime) {
     if (delta > 0 & currentVisibleBlock < 3) {
       slideUp();
 

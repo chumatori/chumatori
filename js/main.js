@@ -2,12 +2,6 @@ var currentVisibleBlock = 0;
 const pageContent = document.querySelectorAll('section');
 const navMenuElement = document.querySelectorAll('nav > ul > li');
 
-function hideAll() {
-  for ( let i = 0; i < pageContent.length; i++) {
-    pageContent[i].style.display = 'none';
-
-  }
-}
 
 function selectedNavMenuElement() {
   for (let i = 0; i < navMenuElement.length; i++) {
@@ -41,11 +35,13 @@ scrollPageContent(window, function () {
 
   if (scrollTimeout === 0 || (scrollTimeout + 300) <= eventTime) {
     if (delta > 0 & currentVisibleBlock < 3) {
-      hideAll(); pageContent[(++currentVisibleBlock)].style.display = 'block';
+      slideUp();
+
       scrollTimeout = Number(new Date);
     }
     if (delta < 0 & currentVisibleBlock > 0) {
-      hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
+      slideDown();
+      
       scrollTimeout = Number(new Date);
     }
     selectedNavMenuElement();
@@ -57,14 +53,20 @@ scrollPageContent(window, function () {
 function clickNavMenuElement() {  
   for (let i=0; i < navMenuElement.length; i++){
     navMenuElement[i].addEventListener('click', function () {
-          hideAll(); 
-      pageContent[i].style.display = 'block';
-      currentVisibleBlock = i;
+      if (i < currentVisibleBlock) {
+        pageContent[currentVisibleBlock].style.top = "100%"
+        currentVisibleBlock = i;
+        pageContent[currentVisibleBlock].style.top = "0"} 
+      else {
+        pageContent[currentVisibleBlock].style.top = "-100%"
+        currentVisibleBlock = i;
+        pageContent[currentVisibleBlock].style.top = "0"}
       selectedNavMenuElement(); 
     })
-
+    console.log(currentVisibleBlock+ " " + navMenuElement[i]);
   }
-}  
+}
+  
 clickNavMenuElement();
 
 
@@ -76,10 +78,10 @@ function deltaYStart (ev) {
 function DeltaYEnd(ev) { 
   end = ev.changedTouches[0].screenY;
   if (((start - end) > 50) & (currentVisibleBlock < 3)){
-    hideAll(); pageContent[(++currentVisibleBlock)].style.display = 'block';
+    slideUp();
   }
   if (((start - end) < -50) & (currentVisibleBlock > 0 )) {
-    hideAll(); pageContent[(--currentVisibleBlock)].style.display = 'block';
+    slideDown();
   }
   selectedNavMenuElement();
   return false;
@@ -88,3 +90,11 @@ touchArea.addEventListener('touchstart', deltaYStart, false);
 touchArea.addEventListener('touchend', DeltaYEnd, false);
 
 
+function slideDown() {
+  pageContent[currentVisibleBlock].style.top = "100%"
+  pageContent[(--currentVisibleBlock)].style.top = '0';
+}
+function slideUp() {
+  pageContent[currentVisibleBlock].style.top = "-100%"
+  pageContent[(++currentVisibleBlock)].style.top = '0';
+}

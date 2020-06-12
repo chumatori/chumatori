@@ -119,10 +119,20 @@ body
         flex: 1 1
         overflow: hidden
         color: white
+        position: relative
+        width: 100%
+        height: 100%
         section
-          display: none
+          position: absolute
+          top: 100%
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          transition: top 0.8s
         .content_main
-          display: block
+          top: 0
       
 
   footer
@@ -179,6 +189,10 @@ body
           background: rgba(0, 0, 0, 0.5)
 .left_block
   border-right: 1px solid white
+.slide_up
+  top: 100%
+.slide_down
+
 @media screen and ( max-width: 700px )
   body
     main

@@ -115,9 +115,7 @@ main
     justify-content: center
     width: 100%
     .left_block
-      display: flex
-      flex-direction: column
-      justify-content: center
+      position: relative
       border-right: 1px solid white
     .holder
       flex: 1 1
@@ -130,7 +128,6 @@ main
         position: absolute
         top: 100%
         display: flex;
-        justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
@@ -194,3 +191,76 @@ header
 
 
 ///////////////////////
+.decorator
+  position: absolute
+  width: 80%
+  height: 30%
+  top: 40%
+  left: 10%
+  border: 1px solid white
+  border-top: none
+  &::after
+    content: ""
+    position: absolute
+    border-top: 1px solid white
+    width: 10%
+    top: 0
+  &::before
+    content: ""
+    position: absolute
+    border-top: 1px solid white
+    width: 10%
+    top: 0
+    right: 0
+
+.footer_left_block
+  position: absolute
+  top: 80%
+  left: 0
+  right: 0
+  font-size: 1.4em;
+  font-weight: bold;
+  display: flex
+  justify-content: center
+
+.content_main
+  div
+    text-align: left
+    margin-left: 1.3em
+    h2
+      margin: 0
+      padding: 0.5em
+      font-style: normal
+      text-rendering: optimizeLegibility
+      margin-top: 0.2rem
+      margin-bottom: 0.5rem
+      font-family: 'Opensans'
+      color: #ffffff
+      text-align: left
+      text-transform: uppercase
+      font-size: 1.3em
+      line-height: 1em
+      font-weight: bold
+      border-left: 4px solid currentColor
+    p
+      font-style: normal;
+      text-rendering: optimizeLegibility;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000
+      background: #fff
+      display: inline-block;
+      margin-top: 1em
+      position: relative
+      padding: 0 1em
+      &::after
+        content: ""
+        position: absolute
+        width: 1.3em
+        top: 50%
+        right: 100%
+        border: 1px solid white
+      
+
+
+

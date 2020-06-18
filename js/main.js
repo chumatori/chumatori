@@ -54,11 +54,11 @@ function clickNavMenuElement() {
   for (let i=0; i < navMenuElement.length; i++){
     navMenuElement[i].addEventListener('click', function () {
       if (i < currentVisibleBlock) {
-        pageContent[currentVisibleBlock].style.top = "100%"
+        pageContent[currentVisibleBlock].style.top = "150%"
         currentVisibleBlock = i;
         pageContent[currentVisibleBlock].style.top = "0"} 
       else {
-        pageContent[currentVisibleBlock].style.top = "-100%"
+        pageContent[currentVisibleBlock].style.top = "-150%"
         currentVisibleBlock = i;
         pageContent[currentVisibleBlock].style.top = "0"}
       selectedNavMenuElement(); 
@@ -88,11 +88,11 @@ touchArea.addEventListener('touchend', DeltaYEnd, false);
 
 
 function slideDown() {
-  pageContent[currentVisibleBlock].style.top = "100%"
+  pageContent[currentVisibleBlock].style.top = "150%"
   pageContent[(--currentVisibleBlock)].style.top = '0';
 }
 function slideUp() {
-  pageContent[currentVisibleBlock].style.top = "-100%"
+  pageContent[currentVisibleBlock].style.top = "-150%"
   pageContent[(++currentVisibleBlock)].style.top = '0';
 }
 
@@ -102,12 +102,12 @@ headerNavElement[1].addEventListener('click', clickContact)
 
 function clickAbout () {
   if (currentVisibleBlock < 2) {
-    pageContent[currentVisibleBlock].style.top = "100%"
+    pageContent[currentVisibleBlock].style.top = "150%"
     currentVisibleBlock = 2;
     pageContent[currentVisibleBlock].style.top = "0"
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-100%"
+    pageContent[currentVisibleBlock].style.top = "-150%"
     currentVisibleBlock = 2;
     pageContent[currentVisibleBlock].style.top = "0"
   }
@@ -115,12 +115,12 @@ function clickAbout () {
 }
 function clickContact() {
   if (currentVisibleBlock < 3) {
-    pageContent[currentVisibleBlock].style.top = "100%"
+    pageContent[currentVisibleBlock].style.top = "150%"
     currentVisibleBlock = 3;
     pageContent[currentVisibleBlock].style.top = "0"
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-100%"
+    pageContent[currentVisibleBlock].style.top = "-150%"
     currentVisibleBlock = 3;
     pageContent[currentVisibleBlock].style.top = "0"
   }

@@ -1,6 +1,7 @@
 var currentVisibleBlock = 0;
 const pageContent = document.querySelectorAll('section');
 const navMenuElement = document.querySelectorAll('nav > ul > li');
+const headerNavElement = document.querySelectorAll('header > div > a');
 
 
 function selectedNavMenuElement() {
@@ -41,7 +42,6 @@ scrollPageContent(window, function () {
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  e.preventDefault();
   if (delta > 0 & currentVisibleBlock < 3) { slideUp() }
   if (delta < 0 & currentVisibleBlock > 0) { slideDown() }
   selectedNavMenuElement();
@@ -49,8 +49,6 @@ scrollPageContent(window, function () {
 
   return false;
 })
-
-
 
 function clickNavMenuElement() {  
   for (let i=0; i < navMenuElement.length; i++){
@@ -65,12 +63,9 @@ function clickNavMenuElement() {
         pageContent[currentVisibleBlock].style.top = "0"}
       selectedNavMenuElement(); 
     })
-    console.log(currentVisibleBlock+ " " + navMenuElement[i]);
   }
-}
-  
+} 
 clickNavMenuElement();
-
 
 var touchArea = document.getElementsByTagName('body')[0];
 var start, end;
@@ -99,4 +94,35 @@ function slideDown() {
 function slideUp() {
   pageContent[currentVisibleBlock].style.top = "-100%"
   pageContent[(++currentVisibleBlock)].style.top = '0';
+}
+
+
+headerNavElement[0].addEventListener('click', clickAbout)
+headerNavElement[1].addEventListener('click', clickContact)
+
+function clickAbout () {
+  if (currentVisibleBlock < 2) {
+    pageContent[currentVisibleBlock].style.top = "100%"
+    currentVisibleBlock = 2;
+    pageContent[currentVisibleBlock].style.top = "0"
+  }
+  else {
+    pageContent[currentVisibleBlock].style.top = "-100%"
+    currentVisibleBlock = 2;
+    pageContent[currentVisibleBlock].style.top = "0"
+  }
+  selectedNavMenuElement();
+}
+function clickContact() {
+  if (currentVisibleBlock < 3) {
+    pageContent[currentVisibleBlock].style.top = "100%"
+    currentVisibleBlock = 3;
+    pageContent[currentVisibleBlock].style.top = "0"
+  }
+  else {
+    pageContent[currentVisibleBlock].style.top = "-100%"
+    currentVisibleBlock = 3;
+    pageContent[currentVisibleBlock].style.top = "0"
+  }
+  selectedNavMenuElement();
 }

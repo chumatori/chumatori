@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EACjC,AAEI,IAFA,CACF,IAAI,CACF,UAAU,AAAC,CACT,cAAc,CAAE,MAAM,CAEH,AALzB,AAIM,IAJF,CACF,IAAI,CACF,UAAU,CAER,WAAW,AAAC,CACV,MAAM,CAAE,IAAI,CAAG",
+    "sources": [
+        "../sass/main_responsive.sass"
+    ],
+    "names": [],
+    "file": "main_responsive.min.css"
+}

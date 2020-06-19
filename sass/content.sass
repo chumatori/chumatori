@@ -1,0 +1,253 @@
+
+// // //
+.decorator
+  position: absolute
+  width: 80%
+  height: 30%
+  top: 45%
+  left: 10%
+  border: 1px solid white
+  border-top: none
+  &::after
+    content: ""
+    position: absolute
+    border-top: 1px solid white
+    width: 10%
+    top: 0
+  &::before
+    content: ""
+    position: absolute
+    border-top: 1px solid white
+    width: 10%
+    top: 0
+    right: 0
+
+// // //
+.left_block_footer
+  position: absolute
+  top: 80%
+  left: 0
+  right: 0
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex
+  justify-content: center
+
+// // //
+
+.send_email_form
+  font-size: 100%
+  line-height: 1.5
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  text-align: left
+  color: #fff
+  max-width: 480px
+  .visible
+    visibility: visible
+  .email_ok, .error
+    visibility: hidden
+  .invite
+    font-style: normal
+    font-weight: normal
+    text-rendering: optimizeLegibility
+    font-size: 1rem
+    margin-bottom: .75rem
+  .fields
+    font-size: 100%
+    line-height: 1.5
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    text-align: left
+    color: #fff
+    position: relative
+    border-bottom: 1px solid #5677fc
+    border-bottom-color: #ffffff
+    margin-top: 0
+    background: rgba(255, 255, 255, .10)
+    padding-left: 16px
+    height: 46px
+    min-height: 36px
+    &::before
+      content: " "
+      display: table
+  .input
+    font-size: 100%
+    line-height: 1.5
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    text-align: left
+    color: #fff
+    float: left
+    label
+      font-style: normal
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      text-align: left
+      cursor: pointer
+      line-height: 1.5
+      font-weight: bold
+      font-size: 20px
+      color: #fff
+      text-transform: uppercase
+      display: inline-block
+      margin-bottom: .35rem
+      padding-top: .40rem
+  .email_f
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font: inherit;
+    line-height: normal;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    margin: 0 0 1rem 0;
+    height: 2.3125rem;
+    box-sizing: border-box;
+    transition: box-shadow .45s,border-color .45s ease-in-out;
+    outline: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 0 1rem;
+    padding-bottom: .3rem;
+    font-family: 'Opensans';
+    font-size: 20px;
+    box-shadow: none;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 80px;
+    right: 0;
+    margin-bottom: 0;
+  .error
+    font-style: normal;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 1.5;
+    font-family: 'Opensans';
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: .35rem;
+    padding-top: .40rem;
+    position: absolute;
+    font-size: 12px;
+    top: -22px;
+    left: 0;
+
+  .buttons
+    font-size: 100%
+    font-weight: normal
+    font-style: normal
+    line-height: 1.5
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    text-align: left
+    color: #fff
+    float: left
+    height: 45px
+    position: absolute
+    bottom: 0
+    right: -.5px
+  .email_b
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    font: inherit
+    overflow: visible
+    border-style: solid
+    border-width: 0px
+    cursor: pointer
+    line-height: normal
+    margin: 0 0 1.25rem
+    text-decoration: none
+    text-align: center
+    border-color: #007095
+    display: inline-block
+    font-weight: bold
+    font-size: 20px
+    text-transform: uppercase
+    padding: .5rem 1rem
+    margin-bottom: 0
+    position: relative
+    transition: .3s
+    z-index: 2
+    background: #fff
+    color: #1d1d1d
+    height: 45px
+    &:hover
+      background: #1d1d1d;
+      color: #ffffff;
+  &::after
+    clear: both
+    content: " "
+    display: table
+
+// // //
+
+h1
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin-top: .2rem;
+  margin-bottom: .5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 2.5rem;
+  font-size: 2rem
+h2
+  padding: .5rem 0
+  font-style: normal
+  text-rendering: optimizeLegibility
+  margin-top: .2rem
+  margin-bottom: .5rem
+  color: #ffffff
+  text-align: left
+  text-transform: uppercase
+  font-size: 1.6rem
+  line-height: 1.6rem
+  font-weight: bold
+  border-bottom: 8px solid #5677fc;
+  border-bottom-color: rgba(255, 255, 255, .2)
+
+h3
+  position: relative
+  padding-left: 2rem
+  font-size: 1.1rem
+  line-height: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 1rem 0
+  text-rendering: optimizeLegibility;
+  &::before
+    position: absolute
+    content: ''
+    height: 1px
+    width: 1.5rem
+    background: currentColor
+    left: 0
+    top: 50%
+p
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  padding: .5rem 0
+.content_main
+  h2
+    border-bottom: none
+    border-left: 4px solid currentColor
+    padding-left: .5rem
+  p
+    position: relative
+    font-weight: bold;
+    display: inline-block;
+    color: #000
+    background: #fff
+    text-transform: uppercase;  
+    margin: 1rem 0
+    padding: 0 1rem
+    &::after
+      content: ""
+      position: absolute
+      width: 2rem
+      top: 50%
+      right: 100%
+      border: 1px solid white

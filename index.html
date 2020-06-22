@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/ionicons.css">
   <link rel="stylesheet" href="fonts/opensans/stylesheet.css">
   <link rel="stylesheet" href="css/main.min.css">
-  <link rel="stylesheet" href="css/main_responsive.min.css">
   <link rel="stylesheet" href="css/content.min.css">
 </head>
 <body>
@@ -19,16 +18,16 @@
   <nav>
     <a href='' class="logo"></a>
     <ul>
-      <li class="nav_main"><i class="icon ion ion-home"></i></li>
-      <li class="nav_register"><i class="icon ion ion-email"></i></li>
-      <li class="nav_about"><i class="icon ion ion-compose"></i></li>
-      <li class="nav_contact"><i class="icon ion ion-android-information"></i></li>
+      <li date-role="menu_element" class="nav_main"><i class="icon ion ion-home"></i></li>
+      <li date-role="menu_element" class="nav_register"><i class="icon ion ion-email"></i></li>
+      <li date-role="menu_element" class="nav_about"><i class="icon ion ion-compose"></i></li>
+      <li date-role="menu_element" class="nav_contact"><i class="icon ion ion-android-information"></i></li>
     </ul>
   </nav>
   <header>
     <div class="container">
-      <a href="#" class="header_about"><span>Компания</span></a>
-      <a href="#" class="header_contact"><span>Контакты</span></a>
+      <a date-role="header_element" href="#" class="header_about"><span>Компания</span></a>
+      <a date-role="header_element" href="#" class="header_contact"><span>Контакты</span></a>
     </div>
   </header>
   <main>
@@ -54,14 +53,14 @@
       </div>
       <div class="right_block holder">
 
-        <section class="content_main"><div>
+        <section data-role="scrollable_block" class="content_main"><div>
           <h1>ЗАВОД ПРУЖИН <br>ФРЕЙ</h1>
           <h2>Выпуск пружин сжатия, растяжения, кручения, конусные и бочкообразные, кольца</h2>
           <p>ЛЮБЫЕ ВИДЫ МАТЕРИАЛОВ<br>
           от 0,16 мм до 14,0 мм</p></div>
         </section>
 
-        <section class="content_register">
+        <section data-role="scrollable_block" class="content_register">
           <div>
             <h2>Расчет стоимости производста <i class="ion ion-compose"></i></h2>
             <h3>Зарегистрируйтесь чтобы получить форму расчета</h3>
@@ -85,7 +84,7 @@
 
         </section>  
 
-        <section class="content_about">
+        <section data-role="scrollable_block" class="content_about">
           <div>
             <h2>НАШЕ ПРОИЗВОДСТВО <i class="ion ion-android-information"></i></h2>
             <h3>РАБОТАЕМ С 2008 ГОДА НА ВЫСОКОТОЧНОМ ОБОРУДОВАНИИ</h3>
@@ -95,7 +94,7 @@
           </div>
         </section>
 
-        <section class="content_contact">
+        <section data-role="scrollable_block" class="content_contact">
           <div>
           <h2>Контакты <i class="ion ion-location"></i></h2>
               <div class="row">

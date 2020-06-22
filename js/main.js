@@ -1,7 +1,7 @@
 var currentVisibleBlock = 0;
-const pageContent = document.querySelectorAll('section');
-const navMenuElement = document.querySelectorAll('nav > ul > li');
-const headerNavElement = document.querySelectorAll('header > div > a');
+const pageContent = document.querySelectorAll('[data-role="scrollable_block"]');
+const navMenuElement = document.querySelectorAll('[date-role="menu_element"]');
+const headerNavElement = document.querySelectorAll('[date-role="header_element"]');
 
 
 function selectedNavMenuElement() {

@@ -6,7 +6,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/ionicons.css">
-  <link rel="stylesheet" href="fonts/opensans/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.min.css">
   <link rel="stylesheet" href="css/content.min.css">
 </head>
@@ -18,10 +18,14 @@
   <nav>
     <a href='' class="logo"></a>
     <ul>
-      <li date-role="menu_element" class="nav_main"><i class="icon ion ion-home"></i></li>
-      <li date-role="menu_element" class="nav_register"><i class="icon ion ion-email"></i></li>
-      <li date-role="menu_element" class="nav_about"><i class="icon ion ion-compose"></i></li>
-      <li date-role="menu_element" class="nav_contact"><i class="icon ion ion-android-information"></i></li>
+      <li date-role="menu_element" class="nav_main">
+        <i class="icon ion ion-home"></i><span class="title">Главная</span></li>
+      <li date-role="menu_element" class="nav_register">
+        <i class="icon ion ion-email"></i><span class="title">Наше предложение</span></li>
+      <li date-role="menu_element" class="nav_about">
+        <i class="icon ion ion-compose"></i><span class="title">О компании</span></li>
+      <li date-role="menu_element" class="nav_contact">
+        <i class="icon ion ion-android-information"></i><span class="title">Контакты</span></li>
     </ul>
   </nav>
   <header>
@@ -68,7 +72,7 @@
           <div>
             <form id="mail_subscription" class="send_email_form" method="get" action="ajaxserver/serverfile.php"
               novalidate="novalidate">
-              <p class="invite">Пожалуйста, напишите свой Email ниже, для связи с нами::</p>
+              <p class="invite">Пожалуйста, напишите свой Email ниже, для связи с нами:</p>
               <p id="reg-email-error" class="error" for="reg-email">ЭТО ПОЛЕ ОБЯЗАТЕЛЬНО К ЗАПОЛНЕНИЮ</p>
               <div class="fields">
                 <div class="input">

@@ -11,7 +11,32 @@ function selectedNavMenuElement() {
   navMenuElement[currentVisibleBlock].classList.add('nav_selected')  
 }
 selectedNavMenuElement();
+
 //scroll
+
+function slideUp() {
+  pageContent[currentVisibleBlock].style.top = "150%";
+  pageContent[currentVisibleBlock].style.transform = "scale(0.9) translateY(2rem)";
+}
+function slideDown() {
+  pageContent[currentVisibleBlock].style.top = "-150%";
+  pageContent[currentVisibleBlock].style.transform = "scale(0.9) translateY(-2rem)";
+}
+function slideMid() {
+  pageContent[currentVisibleBlock].style.top = "0";
+  pageContent[currentVisibleBlock].style.transform = "scale(1) translateY(0)";
+}
+
+function scrollUp() {
+  slideUp();
+  --currentVisibleBlock;
+  slideMid();
+}
+function scrollDown() {
+  slideDown();
+  ++currentVisibleBlock;
+  slideMid();
+}
 
 function scrollPageContent(elem, callback) {
   if (elem.addEventListener) {
@@ -42,8 +67,8 @@ scrollPageContent(window, function () {
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  if (delta > 0 & currentVisibleBlock < 3) { slideUp() }
-  if (delta < 0 & currentVisibleBlock > 0) { slideDown() }
+  if (delta > 0 & currentVisibleBlock < 3) { scrollDown() }
+  if (delta < 0 & currentVisibleBlock > 0) { scrollUp() }
   selectedNavMenuElement();
 
 
@@ -54,18 +79,14 @@ function clickNavMenuElement() {
   for (let i=0; i < navMenuElement.length; i++){
     navMenuElement[i].addEventListener('click', function () {
       if (i < currentVisibleBlock) {
-        pageContent[currentVisibleBlock].style.top = "150%";
-        pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+        slideUp();
         currentVisibleBlock = i;
-        pageContent[currentVisibleBlock].style.top = "0";
-        pageContent[currentVisibleBlock].style.transform = "scale(1)";
+        slideMid();
       }
       else {
-        pageContent[currentVisibleBlock].style.top = "-150%";
-        pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+        slideDown();
         currentVisibleBlock = i;
-        pageContent[currentVisibleBlock].style.top = "0";
-        pageContent[currentVisibleBlock].style.transform = "scale(1)";
+        slideMid();
       }
       selectedNavMenuElement(); 
     })
@@ -81,10 +102,10 @@ function deltaYStart (ev) {
 function DeltaYEnd(ev) { 
   end = ev.changedTouches[0].screenY;
   if (((start - end) > 50) & (currentVisibleBlock < 3)){
-    slideUp();
+    scrollDown();
   }
   if (((start - end) < -50) & (currentVisibleBlock > 0 )) {
-    slideDown();
+    scrollUp();
   }
   selectedNavMenuElement();
   return false;
@@ -93,62 +114,33 @@ touchArea.addEventListener('touchstart', deltaYStart, false);
 touchArea.addEventListener('touchend', DeltaYEnd, false);
 
 
-function slideDown() {
-  pageContent[currentVisibleBlock].style.top = "150%";
-  pageContent[currentVisibleBlock].style.transform ="scale(0.9)";
-  pageContent[(--currentVisibleBlock)].style.top = '0';
-  pageContent[currentVisibleBlock].style.transform = "scale(1)";
-}
-function slideUp() {
-  pageContent[currentVisibleBlock].style.top = "-150%";
-  pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
-  pageContent[(++currentVisibleBlock)].style.top = '0';
-  pageContent[currentVisibleBlock].style.transform = "scale(1)";
-}
-
 
 headerNavElement[0].addEventListener('click', clickAbout)
 headerNavElement[1].addEventListener('click', clickContact)
 
 function clickAbout () {
   if (currentVisibleBlock < 2) {
-    pageContent[currentVisibleBlock].style.top = "150%";
-    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+    slideUp();
     currentVisibleBlock = 2;
-    pageContent[currentVisibleBlock].style.top = "0";
-    pageContent[currentVisibleBlock].style.transform = "scale(1)";
+    slideMid();
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-150%";
-    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+    slideDown();
     currentVisibleBlock = 2;
-    pageContent[currentVisibleBlock].style.top = "0";
-    pageContent[currentVisibleBlock].style.transform = "scale(1)";
+    slideMid();
   }
   selectedNavMenuElement();
 }
 function clickContact() {
   if (currentVisibleBlock < 3) {
-    pageContent[currentVisibleBlock].style.top = "150%";
-    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+    slideUp();
     currentVisibleBlock = 3;
-    pageContent[currentVisibleBlock].style.top = "0";
+    slideMid();
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-150%";
-    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
+    slideDown();
     currentVisibleBlock = 3;
-    pageContent[currentVisibleBlock].style.top = "0";
-    pageContent[currentVisibleBlock].style.transform = "scale(1)";
+    slideMid();
   }
   selectedNavMenuElement();
-}
-function slideUp() {
-  
-}
-function slideDown() {
-  
-}
-function slideMid() {
-  
 }

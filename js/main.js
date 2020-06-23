@@ -54,13 +54,19 @@ function clickNavMenuElement() {
   for (let i=0; i < navMenuElement.length; i++){
     navMenuElement[i].addEventListener('click', function () {
       if (i < currentVisibleBlock) {
-        pageContent[currentVisibleBlock].style.top = "150%"
+        pageContent[currentVisibleBlock].style.top = "150%";
+        pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
         currentVisibleBlock = i;
-        pageContent[currentVisibleBlock].style.top = "0"} 
+        pageContent[currentVisibleBlock].style.top = "0";
+        pageContent[currentVisibleBlock].style.transform = "scale(1)";
+      }
       else {
-        pageContent[currentVisibleBlock].style.top = "-150%"
+        pageContent[currentVisibleBlock].style.top = "-150%";
+        pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
         currentVisibleBlock = i;
-        pageContent[currentVisibleBlock].style.top = "0"}
+        pageContent[currentVisibleBlock].style.top = "0";
+        pageContent[currentVisibleBlock].style.transform = "scale(1)";
+      }
       selectedNavMenuElement(); 
     })
   }
@@ -88,12 +94,16 @@ touchArea.addEventListener('touchend', DeltaYEnd, false);
 
 
 function slideDown() {
-  pageContent[currentVisibleBlock].style.top = "150%"
+  pageContent[currentVisibleBlock].style.top = "150%";
+  pageContent[currentVisibleBlock].style.transform ="scale(0.9)";
   pageContent[(--currentVisibleBlock)].style.top = '0';
+  pageContent[currentVisibleBlock].style.transform = "scale(1)";
 }
 function slideUp() {
-  pageContent[currentVisibleBlock].style.top = "-150%"
+  pageContent[currentVisibleBlock].style.top = "-150%";
+  pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
   pageContent[(++currentVisibleBlock)].style.top = '0';
+  pageContent[currentVisibleBlock].style.transform = "scale(1)";
 }
 
 
@@ -102,27 +112,43 @@ headerNavElement[1].addEventListener('click', clickContact)
 
 function clickAbout () {
   if (currentVisibleBlock < 2) {
-    pageContent[currentVisibleBlock].style.top = "150%"
+    pageContent[currentVisibleBlock].style.top = "150%";
+    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
     currentVisibleBlock = 2;
-    pageContent[currentVisibleBlock].style.top = "0"
+    pageContent[currentVisibleBlock].style.top = "0";
+    pageContent[currentVisibleBlock].style.transform = "scale(1)";
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-150%"
+    pageContent[currentVisibleBlock].style.top = "-150%";
+    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
     currentVisibleBlock = 2;
-    pageContent[currentVisibleBlock].style.top = "0"
+    pageContent[currentVisibleBlock].style.top = "0";
+    pageContent[currentVisibleBlock].style.transform = "scale(1)";
   }
   selectedNavMenuElement();
 }
 function clickContact() {
   if (currentVisibleBlock < 3) {
-    pageContent[currentVisibleBlock].style.top = "150%"
+    pageContent[currentVisibleBlock].style.top = "150%";
+    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
     currentVisibleBlock = 3;
-    pageContent[currentVisibleBlock].style.top = "0"
+    pageContent[currentVisibleBlock].style.top = "0";
   }
   else {
-    pageContent[currentVisibleBlock].style.top = "-150%"
+    pageContent[currentVisibleBlock].style.top = "-150%";
+    pageContent[currentVisibleBlock].style.transform = "scale(0.9)";
     currentVisibleBlock = 3;
-    pageContent[currentVisibleBlock].style.top = "0"
+    pageContent[currentVisibleBlock].style.top = "0";
+    pageContent[currentVisibleBlock].style.transform = "scale(1)";
   }
   selectedNavMenuElement();
+}
+function slideUp() {
+  
+}
+function slideDown() {
+  
+}
+function slideMid() {
+  
 }

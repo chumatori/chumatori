@@ -109,14 +109,7 @@ h3
   font-weight: bold;
   margin: 1rem 0
   text-rendering: optimizeLegibility;
-  &::before
-    position: absolute
-    content: ''
-    height: 1px
-    width: 1.5rem
-    background: currentColor
-    left: 0
-    top: 50%
+
 h4
   margin: 0;
   padding: 0;
@@ -169,7 +162,16 @@ a, a:active, a:hover, a:visited
       border: 1px solid white
 
 // // //
-
+.content_register
+  h3:before
+    position: absolute
+    content: ''
+    height: 1px
+    width: 1.5rem
+    background: currentColor
+    left: 0
+    top: 50%
+// // //
 .content_contact
   > div
     width: 100%

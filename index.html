@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.min.css">
   <link rel="stylesheet" href="css/content.min.css">
+  <link rel="stylesheet" href="css/login.min.css">
 </head>
+
 <body>
   <div class="page_cover">
     <video autobuffer="autobuffer" autoplay="autoplay" loop="loop" muted="muted">
@@ -40,28 +43,35 @@
         <div class="decorator">
           <div class="decorator_child"></div>
         </div>
-        <div id="container">
-          <h2>Вход <i class="ion ion-person"></i></h2>
-          <form>
-            <input type="email" name="email" placeholder="E-mail">
-            <input type="password" name="pass" placeholder="Password">
-            <button href="#">Вход </button>
-            <div id="remember-container">
-              <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
-              <span id="remember">Запомнить меня</span>
-              <span id="forgotten">Восстановить пароль</span>
-            </div>
-          </form>
+        <!-- Begin of login form -->
+        <div class="login_form">
+
+          <div class="content">
+            <span class="decor"></span>
+            <h2>Вход <i class="ion ion-person"></i></h2>
+            <form>
+              <input type="email" name="email" placeholder="E-mail">
+              <input type="password" name="pass" placeholder="Password">
+              <button href="#">Вход </button>
+            </form>
+          </div>
+
+
+          <footer>
+            <p>Изготовление <strong>пружин и изделий</strong></p>
+          </footer>
         </div>
-        <div class="left_block_footer"><p>Изготовление пружин и изделий</p></div>
+
       </div>
       <div class="right_block holder">
 
-        <section data-role="scrollable_block" class="content_main"><div>
-          <h1>ЗАВОД ПРУЖИН <br>ФРЕЙ</h1>
-          <h2>Выпуск пружин сжатия, растяжения, кручения, конусные и бочкообразные, кольца</h2>
-          <p>ЛЮБЫЕ ВИДЫ МАТЕРИАЛОВ<br>
-          от 0,16 мм до 14,0 мм</p></div>
+        <section data-role="scrollable_block" class="content_main">
+          <div>
+            <h1>ЗАВОД ПРУЖИН <br>ФРЕЙ</h1>
+            <h2>Выпуск пружин сжатия, растяжения, кручения, конусные и бочкообразные, кольца</h2>
+            <p>ЛЮБЫЕ ВИДЫ МАТЕРИАЛОВ<br>
+              от 0,16 мм до 14,0 мм</p>
+          </div>
         </section>
 
         <section data-role="scrollable_block" class="content_register">
@@ -77,78 +87,83 @@
               <div class="fields">
                 <div class="input">
                   <label for="reg_email">Email</label>
-                  <input id="reg_email" class="email_f" name="email" type="email" required="" placeholder="your@email.address"
-                    data-validation-type="email" aria-required="true">
+                  <input id="reg_email" class="email_f" name="email" type="email" required=""
+                    placeholder="your@email.address" data-validation-type="email" aria-required="true">
                   <div class="buttons"><button id="submit_email" class="email_b" name="submit_email">Ok</button></div>
-                  </div>
+                </div>
               </div>
               <p class="email_ok"><strong>Thank you</strong> for your subscription. We will inform you.</p>
             </form>
           </div>
 
-        </section>  
+        </section>
 
         <section data-role="scrollable_block" class="content_about">
           <div>
             <h2>НАШЕ ПРОИЗВОДСТВО <i class="ion ion-android-information"></i></h2>
             <h3>РАБОТАЕМ С 2008 ГОДА НА ВЫСОКОТОЧНОМ ОБОРУДОВАНИИ</h3>
-            <p>Производим пружины сжатия, растяжения, кручения, кольца,различные изделия из проволоки от 1шт. до многомиллионных партий. <br>
-            Диапазон используемой проволоки - от 0,16мм до 14,0мм.</p>
-            <p>Наша компания применяет практически все виды материалов используемые для производства данной продукции: холоднотянутую пружинную проволоку, легированные пружинные стали, нержавеющие стали, жаропрочные специальные сплавы, бронзу по Российским стандартам. Также используем импортные пружинные стали по EN10270 (холоднотянутую, каленую в масле, нержавеющую проволоку).</p>
+            <p>Производим пружины сжатия, растяжения, кручения, кольца,различные изделия из проволоки от 1шт. до
+              многомиллионных партий. <br>
+              Диапазон используемой проволоки - от 0,16мм до 14,0мм.</p>
+            <p>Наша компания применяет практически все виды материалов используемые для производства данной продукции:
+              холоднотянутую пружинную проволоку, легированные пружинные стали, нержавеющие стали, жаропрочные
+              специальные сплавы, бронзу по Российским стандартам. Также используем импортные пружинные стали по EN10270
+              (холоднотянутую, каленую в масле, нержавеющую проволоку).</p>
           </div>
         </section>
 
         <section data-role="scrollable_block" class="content_contact">
           <div>
-          <h2>Контакты <i class="ion ion-location"></i></h2>
-              <div class="row">
-                <div class="columns">
-                  <ul>
-                    <li>
-                      <h4>Email</h4>
-                      <p><a href="mailto://contact@mail.com">office@spring-crm.ru</a></p>
-                    </li>
-                    <li>
-                      <h4>Адрес</h4>
-                      <p>г. Ульяновск, 40-й
-                        <br>Инженерный проезд, д.24<br>
+            <h2>Контакты <i class="ion ion-location"></i></h2>
+            <div class="row">
+              <div class="columns">
+                <ul>
+                  <li>
+                    <h4>Email</h4>
+                    <p><a href="mailto://contact@mail.com">office@spring-crm.ru</a></p>
+                  </li>
+                  <li>
+                    <h4>Адрес</h4>
+                    <p>г. Ульяновск, 40-й
+                      <br>Инженерный проезд, д.24<br>
                       стр.1</p>
-                    </li>
-                    <li>
-                      <h4>Телефон</h4>
-                      <p>+7 (8422) 29-01-37 <br>
+                  </li>
+                  <li>
+                    <h4>Телефон</h4>
+                    <p>+7 (8422) 29-01-37 <br>
                       +7 (8422) 99-22-60</p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="columns">
-                  <ul>
-                    <li class="show-for-medium-up">
-                      <h4>Website</h4>
-                      <p><a href="www.spring-crm.ru">www.spring-crm.ru</a></p>
-                    </li>
-                    <li class="show-for-medium-up">
-                      <h4>Мы в соцсетях</h4>
-                      <div class="socialnet">
-                        <a href="#"><i class="ion ion-social-facebook"></i></a>
-                        <a href="#"><i class="ion ion-social-instagram"></i></a>
-                        <a href="#"><i class="ion ion-social-twitter"></i></a>
-                        <a href="#"><i class="ion ion-social-pinterest"></i></a>
-                        <a href="#"><i class="ion ion-social-tumblr"></i></a>
-                      </div>
-                    </li>
-                    <li>
-                      <p><img src="img/logo_only.png" alt="Logo" class="logo">Завод фрей</p>
-                      <p class="small">Разработка портала студия <strong><a href="#">WEBERIX</a></strong><br> &copy 2020. Все права защищены</p>
-                    </li>
-                  </ul>
-
-                </div>
+                  </li>
+                </ul>
               </div>
+              <div class="columns">
+                <ul>
+                  <li class="show-for-medium-up">
+                    <h4>Website</h4>
+                    <p><a href="www.spring-crm.ru">www.spring-crm.ru</a></p>
+                  </li>
+                  <li class="show-for-medium-up">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="socialnet">
+                      <a href="#"><i class="ion ion-social-facebook"></i></a>
+                      <a href="#"><i class="ion ion-social-instagram"></i></a>
+                      <a href="#"><i class="ion ion-social-twitter"></i></a>
+                      <a href="#"><i class="ion ion-social-pinterest"></i></a>
+                      <a href="#"><i class="ion ion-social-tumblr"></i></a>
+                    </div>
+                  </li>
+                  <li>
+                    <p><img src="img/logo_only.png" alt="Logo" class="logo">Завод фрей</p>
+                    <p class="small">Разработка портала студия <strong><a href="#">WEBERIX</a></strong><br> &copy 2020.
+                      Все права защищены</p>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
           </div>
         </section>
       </div>
-      
+
     </div>
   </main>
   <footer>

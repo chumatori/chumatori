@@ -134,12 +134,17 @@ nav
   flex-direction: column
   justify-content: center
   list-style-type: none
+  z-index: 100
   .dots_item
     width: 14px
     height: 14px
     margin-top: 7px
     position: relative
     cursor: pointer
+    &:hover span
+      width: 10px
+      height: 10px
+      margin: -5px 0px 0px -5px;
     span
       border-radius: 50%;
       position: absolute;
@@ -151,11 +156,29 @@ nav
       left: 50%;
       top: 50%;
       margin: -2px 0 0 -2px;
-    &:hover span
+      transition: 0.3s
+      cursor: pointer
+      &::after
+        background: rgba(255, 255, 255, 0.15);
+        position: absolute;
+        content: "";
+        display: block;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 100%;
+        transition: 0.3s;
+    span.active
       width: 10px
       height: 10px
       margin: -5px 0px 0px -5px;
-      
+      &::after
+        top: -6px;
+        left: -6px;
+        bottom: -6px;
+        right: -6px;
+        
 
 
 header, main, footer

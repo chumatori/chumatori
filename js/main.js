@@ -1,14 +1,16 @@
 var currentVisibleBlock = 0;
 const pageContent = document.querySelectorAll('[data-role="scrollable_block"]');
-const navMenuElement = document.querySelectorAll('[date-role="menu_element"]');
-const headerNavElement = document.querySelectorAll('[date-role="header_element"]');
-
+const navMenuElement = document.querySelectorAll('[data-role="menu_element"]');
+const headerNavElement = document.querySelectorAll('[data-role="header_element"]');
+const dotsNavElement = document.querySelectorAll('[data-role="dots_nav"]');
 
 function selectedNavMenuElement() {
   for (let i = 0; i < navMenuElement.length; i++) {
     navMenuElement[i].classList.remove('nav_selected');
+    dotsNavElement[i].firstElementChild.classList.remove('active');
   }
-  navMenuElement[currentVisibleBlock].classList.add('nav_selected')  
+  navMenuElement[currentVisibleBlock].classList.add('nav_selected');
+  dotsNavElement[currentVisibleBlock].firstElementChild.classList.add('active');
 }
 selectedNavMenuElement();
 
@@ -75,6 +77,25 @@ scrollPageContent(window, function () {
   return false;
 })
 
+var touchArea = document.getElementsByTagName('body')[0];
+var start, end;
+function deltaYStart (ev) { 
+  start = ev.touches[0].screenY; return start; 
+}
+function DeltaYEnd(ev) { 
+  end = ev.changedTouches[0].screenY;
+  if (((start - end) > 50) & (currentVisibleBlock < 3)){
+    scrollDown();
+  }
+  if (((start - end) < -50) & (currentVisibleBlock > 0 )) {
+    scrollUp();
+  }
+  selectedNavMenuElement();
+  return false;
+}
+touchArea.addEventListener('touchstart', deltaYStart, false);
+touchArea.addEventListener('touchend', DeltaYEnd, false);
+
 function clickNavMenuElement() {  
   for (let i=0; i < navMenuElement.length; i++){
     navMenuElement[i].addEventListener('click', function () {
@@ -94,24 +115,25 @@ function clickNavMenuElement() {
 } 
 clickNavMenuElement();
 
-var touchArea = document.getElementsByTagName('body')[0];
-var start, end;
-function deltaYStart (ev) { 
-  start = ev.touches[0].screenY; return start; 
-}
-function DeltaYEnd(ev) { 
-  end = ev.changedTouches[0].screenY;
-  if (((start - end) > 50) & (currentVisibleBlock < 3)){
-    scrollDown();
+function clickDotsNavElement() {
+  for (let i = 0; i < dotsNavElement.length; i++) {
+    dotsNavElement[i].addEventListener('click', function () {
+      if (i < currentVisibleBlock) {
+        slideUp();
+        currentVisibleBlock = i;
+        slideMid();
+      }
+      else {
+        slideDown();
+        currentVisibleBlock = i;
+        slideMid();
+      }
+      selectedNavMenuElement();
+    })
   }
-  if (((start - end) < -50) & (currentVisibleBlock > 0 )) {
-    scrollUp();
-  }
-  selectedNavMenuElement();
-  return false;
 }
-touchArea.addEventListener('touchstart', deltaYStart, false);
-touchArea.addEventListener('touchend', DeltaYEnd, false);
+clickDotsNavElement();
+
 
 
 

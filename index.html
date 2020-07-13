@@ -40,9 +40,7 @@
   <main>
     <div class="container">
       <div class="left_block holder">
-        <div class="decorator">
-          <div class="decorator_child"></div>
-        </div>
+
         <!-- Begin of login form -->
         <div class="login_form">
 
@@ -55,12 +53,10 @@
               <button href="#">Вход </button>
             </form>
           </div>
-
-
-          <footer>
-            <p>Изготовление <strong>пружин и изделий</strong></p>
-          </footer>
         </div>
+            <div class="footer">
+              <p>Изготовление <strong>пружин и изделий</strong></p>
+            </div>
 
       </div>
       <div class="right_block holder">
@@ -83,16 +79,14 @@
             <form id="mail_subscription" class="send_email_form" method="get" action="ajaxserver/serverfile.php"
               novalidate="novalidate">
               <p class="invite">Пожалуйста, напишите свой Email ниже, для связи с нами:</p>
-              <p id="reg-email-error" class="error" for="reg-email">ЭТО ПОЛЕ ОБЯЗАТЕЛЬНО К ЗАПОЛНЕНИЮ</p>
               <div class="fields">
                 <div class="input">
                   <label for="reg_email">Email</label>
                   <input id="reg_email" class="email_f" name="email" type="email" required=""
                     placeholder="your@email.address" data-validation-type="email" aria-required="true">
-                  <div class="buttons"><button id="submit_email" class="email_b" name="submit_email">Ok</button></div>
+                  <div class="buttons"><button id="submit_email" class="email_b" name="submit_email">ОК</button></div>
                 </div>
               </div>
-              <p class="email_ok"><strong>Thank you</strong> for your subscription. We will inform you.</p>
             </form>
           </div>
 
@@ -114,7 +108,13 @@
 
         <section data-role="scrollable_block" class="content_contact">
           <div>
-            <h2>Контакты <i class="ion ion-location"></i></h2>
+            <div class="header">
+              <h2>Контакты <i class="ion ion-location"></i></h2>
+              <ul>
+                <li title="О компании"><i class="ion ion-android-information"></i></li>
+                <li title="Напишите нам"><i class="ion ion-email"></i></li>
+              </ul>
+            </div>
             <div class="row">
               <div class="columns">
                 <ul>
@@ -162,6 +162,12 @@
             </div>
           </div>
         </section>
+        <ul class="dots">
+          <li data-role="dots_nav" class="dots_item"><span></span></li>
+          <li data-role="dots_nav" class="dots_item"><span></span></li>
+          <li data-role="dots_nav" class="dots_item"><span></span></li>
+          <li data-role="dots_nav" class="dots_item"><span></span></li>
+        </ul>
       </div>
 
     </div>

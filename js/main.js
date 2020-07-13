@@ -58,11 +58,11 @@ scrollPageContent(window, function () {
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;
 
-  if (delta < 80 && delta > -80) { return false }
+  if (delta < 30 && delta > -30) { return false }
 
   if (lock) return false;
   lock = true;
-  setTimeout(function () { lock = false }, 700);
+  setTimeout(function () { lock = false }, 600);
 
   var e = window.event;
   var delta = e.deltaY || e.detail || e.wheelDelta;

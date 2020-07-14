@@ -21,11 +21,11 @@ selectedNavMenuElement();
 
 function slideUp() {
   pageContent[currentVisibleBlock].style.top = "150%";
-  pageContent[currentVisibleBlock].style.transform = "scale(0.9) translateY(2rem)";
+  pageContent[currentVisibleBlock].style.transform = "scale(0.8) translateY(2rem)";
 }
 function slideDown() {
   pageContent[currentVisibleBlock].style.top = "-150%";
-  pageContent[currentVisibleBlock].style.transform = "scale(0.9) translateY(-2rem)";
+  pageContent[currentVisibleBlock].style.transform = "scale(0.8) translateY(-2rem)";
 }
 function slideMid() {
   pageContent[currentVisibleBlock].style.top = "0";

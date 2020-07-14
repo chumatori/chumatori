@@ -1,113 +1,18 @@
-.send_email_form
-  font-size: 100%
-  line-height: 1.5rem
-  -webkit-tap-highlight-color: rgba(0,0,0,0)
-  text-align: left
-  color: #fff
-  max-width: 480px
-  .fields
-    height: 2rem
-    display: table
-    min-width: 100%
-    border-bottom: 1px solid #5677fc
-    border-bottom-color: #ffffff
-    background: rgba(255, 255, 255, .1)
-    .input
-      display: table-row
-      label, input, .buttons
-        display: table-cell
-        height: 100%
-      label
-        width: 3rem
-        vertical-align: middle
-        font-weight: bold
-        padding: 0 .5rem
-        text-transform: uppercase
-      input
-        width: 100%
-        background: transparent;
-        box-shadow: none;
-        border: none
-        outline: none
-        padding: 0 0.5rem
-        &::-webkit-input-placeholder 
-          text-align: center
-        &:-moz-placeholder 
-          text-align: center
-        &::-moz-placeholder
-          text-align: center 
-        &:-ms-input-placeholder   
-          text-align: center
-      .buttons
-        width: 2rem
-        height: 100%
-        position: relative
-        button
-          position: absolute
-          top: 0
-          left: 0
-          right: 0
-          bottom: 0
-          border: none
-          padding: 0
-          margin: 0
-          width: 100%
-          color: #000000
-          background: #fff
-          font-weight: normal
-          font-size: 0.8rem
-          font-weight: bold
-          text-align: center
-          text-decoration: none
-          cursor: pointer
-          border-style: solid
-          border-width: 0px
-          border-radius: 0
-          text-transform: uppercase
-          transition: 0.3s
-          z-index: 2
-          &:after
-            z-index: -1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            right: 50%;
-            bottom: 50%;
-            content: "";
-            background: #1d1d1d
-            opacity: 0;
-            border-radius: 120px;
-            -webkit-transition: 0.3s;
-            transition: 0.3s;
-          &:hover::after
-            opacity: 1;
-            border-radius: 0;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #1d1d1d
-          &:hover
-            background: #1d1d1d;
-            color: #ffffff;
-
-// // //
-
 h1
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  margin-top: .2rem;
-  margin-bottom: .5rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 2.5rem;
-  font-size: 2rem
+  margin: 0
+  padding: 0
+  font-weight: normal
+  font-style: normal
+  text-rendering: optimizeLegibility
+  margin-top: .2rem
+  margin-bottom: .5rem
+  color: #ffffff
+  text-transform: uppercase
+  text-align: left
+  line-height: 1em
+  font-size: 3.5rem
 h2
-  padding: .5rem 0
+  padding: 0
   font-style: normal
   text-rendering: optimizeLegibility
   margin-top: .2rem
@@ -115,50 +20,50 @@ h2
   color: #ffffff
   text-align: left
   text-transform: uppercase
-  font-size: 1.6rem
-  line-height: 1.6rem
+  font-size: 2rem
+  line-height: 1em
   font-weight: bold
-  border-bottom: 8px solid #5677fc;
+  border-bottom: 8px solid #5677fc
   border-bottom-color: rgba(255, 255, 255, .2)
   display: inline-block
 
 h3
   position: relative
-  padding-left: 2rem
-  font-size: 1.1rem
-  line-height: 1.1rem;
-  text-transform: uppercase;
-  font-weight: bold;
+  padding: 0 0 0 2.5rem
+  font-size: 1.25rem
+  line-height: 1.4
+  text-transform: uppercase
+  font-weight: bold
   margin: 1rem 0
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility
 
 h4
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  line-height: 1.4;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #ffffff;
+  margin: 0
+  padding: 0
+  font-style: normal
+  text-rendering: optimizeLegibility
+  line-height: 1.4
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 1.25rem
+  color: #ffffff
   display: inline-block
 
 p
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  padding: .5rem 0
+  font-style: normal
+  text-rendering: optimizeLegibility
+  margin-bottom: 0.75rem
 a, a:active, a:hover, a:visited
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  background-color: transparent;
-  text-decoration: none;
-  line-height: inherit;
-  outline: 0;
-  cursor: pointer;
-  color: #fff;
+  font-style: normal
+  font-weight: normal
+  text-rendering: optimizeLegibility
+  font-size: 1rem
+  background-color: transparent
+  text-decoration: none
+  line-height: inherit
+  outline: 0
+  cursor: pointer
+  color: #fff
 
 // // //
 
@@ -166,40 +71,59 @@ a, a:active, a:hover, a:visited
   h2
     border-bottom: none
     border-left: 4px solid currentColor
-    padding-left: .5rem
+    padding: 0 0 0 10px
   p
     position: relative
-    font-weight: bold;
-    display: inline-block;
-    color: #000
+    font-weight: bold
+    display: inline-block
+    color: #1d1d1d
     background: #fff
-    text-transform: uppercase;  
-    margin: 1rem 0
-    padding: 0 1rem
+    text-transform: uppercase
+    padding: 0 .5rem
+    font-size: 1.25rem
+    margin-left: 40px
     &::after
       content: ""
       position: absolute
       width: 2rem
       top: 50%
-      right: 100%
+      right: calc(100% + 8px)
       border-top: 1px solid white
 
 // // //
+.content_register h3:before, .content_about h3:before
+  position: absolute
+  content: ''
+  height: 1px
+  width: 2rem
+  background: currentColor
+  left: 0
+  top: 50%
+
 .content_register
-  h3:before
-    position: absolute
-    content: ''
-    height: 1px
-    width: 1.5rem
-    background: currentColor
-    left: 0
-    top: 50%
+  .fields
+    margin-top: 1.5rem
+    .input
+      background: rgba(255, 255, 255, 0.10)
+      label
+        padding-left: 8px
 // // //
 .content_contact
   > div
     width: 100%
+    transition: 0.6s ease-in-out
+    &.message
+      position: absolute
+      left: 150%
+    &.contact
+      position: relative
+      left: 0
+
   ul
-    list-style: none outside none;
+    list-style: none outside none
+    p
+      margin-bottom: 0.75rem
+      line-height: 1.6
   .row
     display: flex
     justify-content: space-around
@@ -208,64 +132,72 @@ a, a:active, a:hover, a:visited
       text-align: left
       &:last-child
         text-align: right
-.header
-  position: relative
-  h2
-    display: inline-block
-  ul
-    position: absolute
-    right: 0
-    bottom: 8px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.15);
-    display: flex
-    height: 48px
-    li
+  .header
+    position: relative
+    h2
+      display: inline-block
+    ul
+      position: absolute
+      right: 0
+      bottom: 0.5rem
+      right: 0
+      background: rgba(255, 255, 255, 0.15)
       display: flex
-      justify-content: center
-      align-items: center
-      width: 48px
-      height: 48px
-      position: relative
-      i
-        font-size: 24px
-        position: absolute
-        margin: auto
-      &::after
-        content: ""
-        position: absolute
-        border-radius: 100%;
-        background: rgba(255,255,255,0);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: 0.2s
-      &:hover::after
-        border-radius: 0;
-        background: rgba(255,255,255,0.15);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        
-.content_contact 
+      height: 3rem
+      cursor: pointer
+      li
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 3rem
+        height: 3rem
+        position: relative
+        i
+          font-size: 1.5rem
+          position: absolute
+          margin: auto
+        &::after
+          content: ""
+          position: absolute
+          border-radius: 100%
+          background: rgba(255,255,255,0)
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          transition: 0.2s
+        &:hover::after
+          border-radius: 0
+          background: rgba(255,255,255,0.15)
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+
+.content_contact
+  .row
+    ul
+      li
+        margin-top: 20px
   .columns:nth-child(2)
     ul
       li:nth-child(2)
         a
           padding: 0 0.3rem
-          font-size: 2rem
+          font-size: 1.5rem
       li:nth-child(3)
         p:nth-child(1)
-          position: relative;
-          display: inline-block;
+          position: relative
+          display: inline-block
+          font-size: 1.5rem
           img
-            max-height: 2rem ;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 100%;
+            max-height: 3.5rem
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 100%
+        p:nth-child(2)
+          font-size: 12px
 
 // // //
 .decorator
@@ -297,7 +229,94 @@ a, a:active, a:hover, a:visited
   align-items: center
   .footer
     text-align: center
-    font-size: 1.1rem;
-
-
-
+    font-size: 1.1rem
+.message,
+  padding-left: 4.5rem
+  padding-right: 3.5rem
+.fields
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  width: 100%
+  .input
+    width: 100%
+    display: flex
+    height: 2.9rem
+    margin-top: 1.5rem
+    border-bottom: 1px solid #ffffff
+    background: rgba(255, 255, 255, .0)
+    input
+      flex: 1 1
+      background: transparent
+      box-shadow: none
+      border: none
+      outline: none
+      font-size: 1.25rem
+    label
+      display: flex
+      flex-basis: 5rem
+      justify-content: flex-start
+      align-items: center
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 1.25rem
+      cursor: pointer
+    button
+      position: relative
+      flex-basis: 3.8rem
+      font-size: 1.25rem
+      text-transform: uppercase
+      border: none
+      cursor: pointer
+      border-radius: 0
+      transition: 0.3s
+      color: #000000
+      background: #fff
+      font-weight: bold
+      z-index: 2
+      &:after
+        z-index: -1
+        position: absolute
+        top: 50%
+        left: 50%
+        right: 50%
+        bottom: 50%
+        content: ""
+        background: #1d1d1d
+        opacity: 0
+        border-radius: 120px
+        -webkit-transition: 0.3s
+        transition: 0.3s
+      &:hover::after
+        opacity: 1
+        border-radius: 0
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: #1d1d1d
+      &:hover
+        background: #1d1d1d
+        color: #ffffff
+  .text_area
+    margin-top: 1.5rem
+    display: flex
+    flex-direction: column
+    width: 100%
+    label
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 1.25rem
+      cursor: pointer
+    textarea
+      margin-top: 10px
+      width: 100%
+      padding: 10px 20px
+      background: #fff
+      border: 1px solid currentColor
+      color: #626262
+      border-radius: 0
+      min-height: 6.75rem
+      outline: 0
+      font-size: 1.5rem

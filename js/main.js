@@ -3,6 +3,9 @@ const pageContent = document.querySelectorAll('[data-role="scrollable_block"]');
 const navMenuElement = document.querySelectorAll('[data-role="menu_element"]');
 const headerNavElement = document.querySelectorAll('[data-role="header_element"]');
 const dotsNavElement = document.querySelectorAll('[data-role="dots_nav"]');
+const contactButtonElement = document.querySelectorAll('[data-role="contact_button"]');
+const messageButtonElement = document.querySelectorAll('[data-role="message_button"]');
+const contactContentElement = document.querySelectorAll('[data-role="contact_content_element"]');
 
 function selectedNavMenuElement() {
   for (let i = 0; i < navMenuElement.length; i++) {
@@ -79,15 +82,15 @@ scrollPageContent(window, function () {
 
 var touchArea = document.getElementsByTagName('body')[0];
 var start, end;
-function deltaYStart (ev) { 
-  start = ev.touches[0].screenY; return start; 
+function deltaYStart(ev) {
+  start = ev.touches[0].screenY; return start;
 }
-function DeltaYEnd(ev) { 
+function DeltaYEnd(ev) {
   end = ev.changedTouches[0].screenY;
-  if (((start - end) > 50) & (currentVisibleBlock < 3)){
+  if (((start - end) > 50) & (currentVisibleBlock < 3)) {
     scrollDown();
   }
-  if (((start - end) < -50) & (currentVisibleBlock > 0 )) {
+  if (((start - end) < -50) & (currentVisibleBlock > 0)) {
     scrollUp();
   }
   selectedNavMenuElement();
@@ -96,8 +99,8 @@ function DeltaYEnd(ev) {
 touchArea.addEventListener('touchstart', deltaYStart, false);
 touchArea.addEventListener('touchend', DeltaYEnd, false);
 
-function clickNavMenuElement() {  
-  for (let i=0; i < navMenuElement.length; i++){
+function clickNavMenuElement() {
+  for (let i = 0; i < navMenuElement.length; i++) {
     navMenuElement[i].addEventListener('click', function () {
       if (i < currentVisibleBlock) {
         slideUp();
@@ -109,10 +112,10 @@ function clickNavMenuElement() {
         currentVisibleBlock = i;
         slideMid();
       }
-      selectedNavMenuElement(); 
+      selectedNavMenuElement();
     })
   }
-} 
+}
 clickNavMenuElement();
 
 function clickDotsNavElement() {
@@ -135,12 +138,14 @@ function clickDotsNavElement() {
 clickDotsNavElement();
 
 
+headerNavElement[1].addEventListener('click', clickContact);
+headerNavElement[0].addEventListener('click', clickAbout);
+contactButtonElement[0].addEventListener('click', clickAbout);
+messageButtonElement[0].addEventListener('click', clickAbout);
+contactButtonElement[1].addEventListener('click', clickWriteToSwitch);
+messageButtonElement[1].addEventListener('click', clickWriteToSwitch);
 
-
-headerNavElement[0].addEventListener('click', clickAbout)
-headerNavElement[1].addEventListener('click', clickContact)
-
-function clickAbout () {
+function clickAbout() {
   if (currentVisibleBlock < 2) {
     slideUp();
     currentVisibleBlock = 2;
@@ -165,4 +170,17 @@ function clickContact() {
     slideMid();
   }
   selectedNavMenuElement();
+}
+var switchRelay = 0;
+function clickWriteToSwitch() {
+  if (switchRelay === 0){
+    contactContentElement[0].style.left = "-150%";
+    contactContentElement[1].style.left = "0";
+    switchRelay = 1;
+  }
+  else {
+    contactContentElement[0].style.left = "0";
+    contactContentElement[1].style.left = "150%";
+    switchRelay = 0;
+  }
 }

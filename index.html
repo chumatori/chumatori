@@ -23,27 +23,27 @@
     <ul>
       <li data-role="menu_element" class="nav_main">
         <i class="icon ion ion-home"></i><span class="title">Главная</span></li>
-        <li data-role="menu_element" class="nav_register">
-          <i class="icon ion ion-email"></i><span class="title">Наше предложение</span></li>
+      <li data-role="menu_element" class="nav_register">
+        <i class="icon ion ion-compose"></i><span class="title">Наше предложение</span></li>
       <li data-role="menu_element" class="nav_about">
-        <i class="icon ion ion-compose"></i><span class="title">О компании</span></li>
-        <li data-role="menu_element" class="nav_contact">
-        <i class="icon ion ion-android-information"></i><span class="title">Контакты</span></li>
-      </ul>
-    </nav>
-    <header>
-      <div class="container">
-        <a data-role="header_element" href="#" class="header_about"><span>Компания</span></a>
+        <i class="icon ion ion-android-information"></i><span class="title">О компании</span></li>
+      <li data-role="menu_element" class="nav_contact">
+        <i class="icon ion ion-email"></i><span class="title">Контакты</span></li>
+    </ul>
+  </nav>
+  <header>
+    <div class="container">
+      <a data-role="header_element" href="#" class="header_about"><span>Компания</span></a>
       <a data-role="header_element" href="#" class="header_contact"><span>Контакты</span></a>
     </div>
   </header>
   <main>
     <div class="container">
       <div class="left_block holder">
-        
+
         <!-- Begin of login form -->
         <div class="login_form">
-          
+
           <div class="content">
             <span class="decor"></span>
             <h2>Вход <i class="ion ion-person"></i></h2>
@@ -53,11 +53,12 @@
               <button href="#">Вход </button>
             </form>
           </div>
+          <div class="footer">
+            <p>Изготовление <strong>пружин и изделий</strong></p>
+          </div>
         </div>
-        <div class="footer">
-          <p>Изготовление <strong>пружин и изделий</strong></p>
-        </div>
-        
+
+
       </div>
       <div class="right_block holder">
         <ul class="dots">
@@ -66,10 +67,10 @@
           <li data-role="dots_nav" class="dots_item"><span></span></li>
           <li data-role="dots_nav" class="dots_item"><span></span></li>
         </ul>
-        
+
         <section data-role="scrollable_block" class="content_main">
           <div>
-            <h1>ЗАВОД ПРУЖИН <br>ФРЕЙ</h1>
+            <h1>ЗАВОД ПРУЖИН <strong>ФРЕЙ</strong></h1>
             <h2>Выпуск пружин сжатия, растяжения, кручения, конусные и бочкообразные, кольца</h2>
             <p>ЛЮБЫЕ ВИДЫ МАТЕРИАЛОВ<br>
               от 0,16 мм до 14,0 мм</p>
@@ -82,20 +83,18 @@
             <h3>Зарегистрируйтесь чтобы получить форму расчета</h3>
           </div>
           <div>
-            <form id="mail_subscription" class="send_email_form" method="get" action="ajaxserver/serverfile.php"
-              novalidate="novalidate">
+            <form id="mail_subscription" method="get" action="ajaxserver/serverfile.php" novalidate="novalidate">
               <p class="invite">Пожалуйста, напишите свой Email ниже, для связи с нами:</p>
               <div class="fields">
                 <div class="input">
                   <label for="reg_email">Email</label>
-                  <input id="reg_email" class="email_f" name="email" type="email" required=""
-                    placeholder="your@email.address" data-validation-type="email" aria-required="true">
-                  <div class="buttons"><button id="submit_email" class="email_b" name="submit_email">ОК</button></div>
+                  <input id="reg_email" name="email" type="email" required="" placeholder="Ваш email"
+                    data-validation-type="email" aria-required="true">
+                  <button id="submit_email" name="submit_email">ОК</button>
                 </div>
               </div>
             </form>
           </div>
-
         </section>
 
         <section data-role="scrollable_block" class="content_about">
@@ -113,12 +112,12 @@
         </section>
 
         <section data-role="scrollable_block" class="content_contact">
-          <div>
+          <div class="contact" data-role="contact_content_element">
             <div class="header">
               <h2>Контакты <i class="ion ion-location"></i></h2>
               <ul>
-                <li title="О компании"><i class="ion ion-android-information"></i></li>
-                <li title="Напишите нам"><i class="ion ion-email"></i></li>
+                <li data-role="contact_button" title="О компании"><i class="ion ion-android-information"></i></li>
+                <li data-role="contact_button" title="Напишите нам"><i class="ion ion-email"></i></li>
               </ul>
             </div>
             <div class="row">
@@ -131,8 +130,7 @@
                   <li>
                     <h4>Адрес</h4>
                     <p>г. Ульяновск, 40-й
-                      <br>Инженерный проезд, д.24<br>
-                      стр.1</p>
+                      <br>Инженерный проезд, д.24 стр.1</p>
                   </li>
                   <li>
                     <h4>Телефон</h4>
@@ -143,11 +141,11 @@
               </div>
               <div class="columns">
                 <ul>
-                  <li class="show-for-medium-up">
+                  <li>
                     <h4>Website</h4>
                     <p><a href="www.spring-crm.ru">www.spring-crm.ru</a></p>
                   </li>
-                  <li class="show-for-medium-up">
+                  <li>
                     <h4>Мы в соцсетях</h4>
                     <div class="socialnet">
                       <a href="#"><i class="ion ion-social-facebook"></i></a>
@@ -167,9 +165,42 @@
               </div>
             </div>
           </div>
-        </section>
-      </div>
+          <div class="message" data-role="contact_content_element">
+            <div class="header">
+              <h2>Напишите нам <i class="ion ion-email"></i></h2>
+              <ul>
+                <li data-role="message_button" title="О компании"><i class="ion ion-android-information"></i></li>
+                <li data-role="message_button" title="Контакты"><i class="ion ion-email"></i></li>
+              </ul>
+            </div>
+            <form id="message_form" method="get" action="ajaxserver/serverfile.php" novalidate="novalidate">
+              <div class="fields">
 
+                <div class="input">
+                  <label for="mes_name">Имя </label>
+                  <input id="mes_name" name="name" type="text" placeholder="Ваше имя" required="" aria-required="true">
+                  <button id="submit_message" name="submit_message">Ok</button>
+                </div>
+                <div class="input">
+                  <label for="mes_email">Email</label>
+                  <input id="mes_email" name="email" type="email" required="" placeholder="Ваш email"
+                    data-validation-type="email" aria-required="true">
+                </div>
+
+                <div class="text_area">
+                  <label for="mes_text">Сообщение </label>
+                  <textarea id="mes_text" placeholder="Сообщение ..." name="message" required=""
+                    aria-required="true"></textarea>
+                  <!--                   <div>
+                    <p class="invisible">Ваше сообщение отправленно, спасибо.</p>
+                  </div> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
     </div>
   </main>
   <footer>
